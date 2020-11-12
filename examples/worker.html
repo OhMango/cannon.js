@@ -98,9 +98,10 @@
         // Parameters
         var dt = 1/60, N=40;
 
-        // Data arrays. Contains all our kinematic data we need for rendering.
-        var positions = new Float32Array(N*3);
-        var quaternions = new Float32Array(N*4);
+        // Data arrays. Contains all our kinematic data we need for rendering. 
+        // N = cubes + floor
+        var positions = new Float32Array((N+1)*3);
+        var quaternions = new Float32Array((N+1)*4);
 
         // Create a blob for the inline worker code
         var blob = new Blob([document.querySelector('#worker1').textContent],{type:'text/javascript'});
